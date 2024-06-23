@@ -1,0 +1,120 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos para el encabezado */
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilos para botones */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para las secciones de selección */
+.comunidades, .meses, .dias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.comunidad-btn, .mes-btn, .dia-btn {
+    background-color: #28a745; /* Verde para botones de comunidad, meses y días */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.comunidad-btn:hover, .mes-btn:hover, .dia-btn:hover {
+    background-color: #218838; /* Verde más oscuro al hacer hover */
+}
+
+/* Estilos para la tabla de historial */
+#tablaHistorial {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#tablaHistorial th, #tablaHistorial td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#tablaHistorial th {
+    background-color: #007bff; /* Azul para encabezados de tabla */
+    color: white;
+}
+
+/* Estilos para el formulario de registro */
+#registroForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#registroForm label {
+    flex-basis: 100%;
+}
+
+#registroForm input, #registroForm select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#registroForm button[type="submit"] {
+    background-color: #ffc107; /* Amarillo para botón de submit */
+    color: black;
+}
+
+#registroForm button[type="submit"]:hover {
+    background-color: #e0a800; /* Amarillo más oscuro al hacer hover */
+}
+
+/* Estilos para el resumen de ventas */
+#resumenVentas {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}

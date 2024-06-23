@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Reparto de Agua</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos adicionales si los necesitas */
+    </style>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Sección del logo y botón de inicio -->
+        <section id="inicio">
+            <img src="https://i.imgur.com/2moCLD6.png" alt="REGISTRO DE VENTAS" class="logo"> <!-- Imagen local -->
+            <button id="empezarBtn">Empezar</button>
+        </section>
+
+        <!-- Sección de selección de comunidad -->
+        <section id="seleccionComunidad" class="hidden">
+            <h2>Selecciona una Comunidad</h2>
+            <div class="comunidades">
+                <!-- Aquí se agregarán los botones de las comunidades -->
+                <button class="comunidad-btn" data-comunidad="Sacrificio">Sacrificio</button>
+                <button class="comunidad-btn" data-comunidad="El Encanto">El Encanto</button>
+                <button class="comunidad-btn" data-comunidad="Paraíso Nuevo">Paraíso Nuevo</button>
+                <button class="comunidad-btn" data-comunidad="El Naranjo">El Naranjo</button>
+                <button class="comunidad-btn" data-comunidad="Machetazo">Machetazo</button>
+                <button class="comunidad-btn" data-comunidad="La Lucha">La Lucha</button>
+                <button class="comunidad-btn" data-comunidad="Cuauhtémoc">Cuauhtémoc</button>
+            </div>
+            <button class="regresar-btn">Regresar</button>
+        </section>
+
+        <!-- Sección de selección de mes -->
+        <section id="seleccionMes" class="hidden">
+            <h2>Selecciona un Mes</h2>
+            <div class="meses">
+                <!-- Aquí se agregarán los botones de los meses -->
+                <button class="mes-btn" data-mes="enero">Enero</button>
+                <button class="mes-btn" data-mes="febrero">Febrero</button>
+                <button class="mes-btn" data-mes="marzo">Marzo</button>
+                <button class="mes-btn" data-mes="abril">Abril</button>
+                <button class="mes-btn" data-mes="mayo">Mayo</button>
+                <button class="mes-btn" data-mes="junio">Junio</button>
+                <button class="mes-btn" data-mes="julio">Julio</button>
+                <button class="mes-btn" data-mes="agosto">Agosto</button>
+                <button class="mes-btn" data-mes="septiembre">Septiembre</button>
+                <button class="mes-btn" data-mes="octubre">Octubre</button>
+                <button class="mes-btn" data-mes="noviembre">Noviembre</button>
+                <button class="mes-btn" data-mes="diciembre">Diciembre</button>
+            </div>
+            <button class="regresar-btn">Regresar</button>
+        </section>
+
+        <!-- Sección de selección de día -->
+        <section id="seleccionDia" class="hidden">
+            <h2>Selecciona un Día</h2>
+            <div class="dias">
+                <!-- Aquí se agregarán los botones de los días -->
+                <!-- Se generan 31 botones para cada día del mes -->
+                <!-- Puedes ajustar esto según el mes seleccionado -->
+                <button class="dia-btn">1</button>
+                <button class="dia-btn">2</button>
+                <button class="dia-btn">3</button>
+                <button class="dia-btn">4</button>
+                <button class="dia-btn">5</button>
+                <button class="dia-btn">6</button>
+                <button class="dia-btn">7</button>
+                <button class="dia-btn">8</button>
+                <button class="dia-btn">9</button>
+                <button class="dia-btn">10</button>
+                <button class="dia-btn">11</button>
+                <button class="dia-btn">12</button>
+                <button class="dia-btn">13</button>
+                <button class="dia-btn">14</button>
+                <button class="dia-btn">15</button>
+                <button class="dia-btn">16</button>
+                <button class="dia-btn">17</button>
+                <button class="dia-btn">18</button>
+                <button class="dia-btn">19</button>
+                <button class="dia-btn">20</button>
+                <button class="dia-btn">21</button>
+                <button class="dia-btn">22</button>
+                <button class="dia-btn">23</button>
+                <button class="dia-btn">24</button>
+                <button class="dia-btn">25</button>
+                <button class="dia-btn">26</button>
+                <button class="dia-btn">27</button>
+                <button class="dia-btn">28</button>
+                <button class="dia-btn">29</button>
+                <button class="dia-btn">30</button>
+                <button class="dia-btn">31</button>
+            </div>
+            <button class="regresar-btn">Regresar</button>
+        </section>
+
+        <!-- Sección de registro de ventas -->
+        <section id="registroVentas" class="hidden">
+            <h2>Registro de Ventas</h2>
+            <form id="registroForm">
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" name="cliente" required>
+                
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" required>
+                
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" step="0.01" required>
+                
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo">
+                    <option value="venta">Venta</option>
+                    <option value="fiado">Fiado</option>
+                    <option value="cobrado">Cobrado</option>
+                </select>
+
+                <button type="submit">Agregar Registro</button>
+            </form>
+
+            <button id="historialBtn">Historial del Día</button>
+            <button class="regresar-btn">Regresar</button>
+        </section>
+
+        <!-- Sección de historial del día -->
+        <section id="historialDia" class="hidden">
+            <h2>Historial del Día</h2>
+            <table id="tablaHistorial">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th>Tipo</th>
+                        <th>Acciones</th> <!-- Nuevo encabezado para acciones -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán dinámicamente las filas del historial -->
+                </tbody>
+            </table>
+            <div id="resumenVentas">
+                <h3>Resumen de Ventas y Fiados</h3>
+                <p>Total de Garrafones Vendidos: <span id="totalVendidos">0</span></p>
+                <p>Total de Garrafones Fiados: <span id="totalFiados">0</span></p>
+                <p>Total de Dinero Recaudado: $<span id="totalDinero">0.00</span></p>
+            </div>
+            <button id="volverRegistroBtn">Volver al Registro</button>
+            <button id="resetearHistorialBtn">Resetear Historial del Día</button> <!-- Nuevo botón para resetear -->
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
